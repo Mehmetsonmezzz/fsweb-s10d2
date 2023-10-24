@@ -8,6 +8,12 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
+    case ADD_MOVIE: {
+      const newMovies = [...state.movies, action.payload];
+      const newState = { ...state, movies: newMovies };
+      return newState;
+    }
+
     case DELETE_MOVIE:
       return {
         ...state,

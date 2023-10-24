@@ -1,12 +1,15 @@
 import React from "react";
 import { useParams, useHistory } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { deleteMovie } from "../actions/movieActions";
 const Movie = (props) => {
   const { id } = useParams();
   const { push } = useHistory();
-
+  const dispatch = useDispatch();
   const movies = useSelector((store) => store.movies);
   const movie = movies.find((movie) => movie.id === Number(id));
+
+  // const deleteHandler=
 
   return (
     <div className="bg-white rounded-md shadow flex-1">

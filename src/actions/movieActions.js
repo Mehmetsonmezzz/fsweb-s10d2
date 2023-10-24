@@ -1,10 +1,11 @@
 export const DELETE_MOVIE = "DELETE_MOVIE";
-export const MOVIES = "MOVIES";
+export const ADD_MOVIE = "ADD_MOVIE";
 
 export const deleteMovie = (id) => {
   return { type: DELETE_MOVIE, payload: id };
 };
 
-export const movies = () => {
-  return { type: MOVIES };
+export const addMovie = (movie) => {
+  movie.id = Date.now();
+  return { type: ADD_MOVIE, payload: movie };
 };
